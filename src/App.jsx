@@ -5,8 +5,10 @@ import dividerMobile from "./assets/images/pattern-divider-mobile.svg";
 import "./App.css";
 
 function App() {
-  const [advice, setAdvice] = useState("");
-  const [adviceNumber, setAdviceNumber] = useState(0);
+  const [advice, setAdvice] = useState(
+    "It is easy to sit up and take notice, what's difficult is getting up and taking action."
+  );
+  const [adviceNumber, setAdviceNumber] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [timePassed, setTimePassed] = useState(true);
@@ -36,9 +38,7 @@ function App() {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    getAdvice();
-  }, []);
+
   return (
     <div className="!relative bg-Neutral-Dark-Grayish-Blue p-[25px] sm:p-[49px] rounded-lg shadow-lg text-center max-w-[540px] mx-4 my-16 sm:m-0">
       <h6 className="text-Primary-Neon-Green text-xs tracking-[5px] mb-5">
@@ -59,7 +59,11 @@ function App() {
       />
       <div className=" flex flex-col gap-1 mb-3 text-[.8rem] sm:text-[1.2rem] ">
         <h6 className="text-[#979A9A]">
-          {timePassed ? "Ready Now" : "Wait for 2sec to Get New Advice"}
+          {timePassed
+            ? "Ready Now"
+            : loading
+            ? "Loading..."
+            : "Wait for 2sec to Get New Advice"}
         </h6>
         {error && (
           <p className="text-[#EC7063]">
