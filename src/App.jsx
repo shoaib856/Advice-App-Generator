@@ -44,7 +44,7 @@ function App() {
       <h6 className="text-Primary-Neon-Green text-xs tracking-[5px] mb-5">
         ADVICE #{adviceNumber}
       </h6>
-      <p className="text-Primary-Light-Cyan text-[1.2rem] sm:text[1.7rem]">
+      <p className="text-Primary-Light-Cyan text-[1.2rem] sm:text-[1.7rem]">
         <q>{advice}</q>
       </p>
       <img
