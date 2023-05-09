@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+*,
+*::before,
+*::after {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  @apply bg-Neutral-Dark-Blue;
+}
+#root {
+  @apply flex items-center justify-center min-h-screen;
+}
+.neon-effect {
+  @apply transform  transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 bg-Primary-Neon-Green p-5 rounded-full absolute -bottom-8 left-1/2 -translate-x-1/2;
+}
+.neon-effect:hover {
+  @apply scale-110;
+  box-shadow: 0 0 20px hsl(150, 100%, 66%), 0 0 40px hsl(150, 100%, 66%),
+    0 0 50px hsl(150, 100%, 66%);
+}
